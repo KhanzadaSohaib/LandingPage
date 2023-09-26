@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .top {
+            background-color: rgb(245, 244, 244);
+
+        }
+        .flex-box {
+            display: flex;
+            align-items: center;
+        }
+        .flex-box h2 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .flex-box p {
+            margin: 0;
+            font-size: 16px;
+            color: #5c5c5c;
+        }
+        .flex-box img {
+            margin-right: 20px;
+            margin-bottom: 30px;
+         margin-top: 15px;
+        }
+        .flex-box .flex-box {
+            margin-right: 50px;
+        }
+        .mt-28 {
+            margin-top: 28px;
+        }
+
+
+        /* Importing Google font - Open Sans */
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1550px;
+            margin: 0 auto;
+            padding: 20px 15px;
+            background: rgb(245, 244, 244);
+        
+        }
+
+        .navbar .logo a {
+            font-size: 1.8rem;
+            text-decoration: none;
+            color: black;
+        }
+
+        .navbar .links {
+
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 65px;
+        }
+
+        .navbar .links a {
+            font-weight: 500;
+            text-decoration: none;
+            color: black;
+            padding: 10px 0;
+            transition: 0.2s ease;
+        }
+
+        .navbar .links a:hover {
+            color: #47b2e4;
+        }
+
+        .navbar .buttons a {
+            text-decoration: none;
+            color:black;
+            font-size: 1rem;
+            padding: 15px 0;
+            transition: 0.2s ease;
+        }
+
+        .navbar .buttons a:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        .navbar .buttons .signin:hover {
+            color: #47b2e4;
+        }
+
+        .navbar .buttons .signup {
+            border: 1px solid #fff;
+            padding: 10px 20px;
+            border-radius: 0.375rem;
+            text-align: center;
+            transition: 0.2s ease;
+        }
+
+        .navbar .buttons .signup:hover {
+            background-color: #3253f8;
+            color: #fff;
+        }
+
+        .hero-section {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 95vh;
+            padding: 0 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-section .hero {
+            max-width: 50%;
+            color: #fff;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #c9c7c7;
+        }
+
+        .hero-section .img img {
+            width: 517px;
+        }
+
+        .hero-section .buttons {
+            margin-top: 40px;
+        }
+
+        .hero-section .buttons a {
+            text-decoration: none;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: 0.2s ease;
+            display: inline-block;
+        }
+
+        .hero-section .buttons a:not(:last-child) {
+            margin-right: 15px;
+        }
+
+        .buttons .join {
+            background-color: #47b2e4;
+        }
+
+        .hero-section .buttons .learn {
+            border: 1px solid #fff;
+            border-radius: 0.375rem;
+        }
+
+        .hero-section .buttons a:hover {
+            background-color: #47b2e4;
+        }
+
+        /* Hamburger menu styles */
+        #menu-toggle {
+            display: none;
+        }
+
+        #hamburger-btn {
+            font-size: 1.8rem;
+            color: black;
+            cursor: pointer;
+            display: none;
+            order: 1;
+        }
+
+        .align-center {
+            padding: 20px;
+            align-items: center;
+            box-shadow: 0 0 5px 0 #cecece;
+        }
+
+        .align-center img {
+            padding: 0 0 15px 0 !important;
+        }
+
+        @media screen and (max-width: 1023px) {
+
+
+            .links {
+                position: fixed;
+                left: -100%;
+                top: 75px;
+                width: 100%;
+                height: 100vh;
+                padding-top: 50px;
+                background: rgb(245, 244, 244);
+                flex-direction: column;
+                transition: 0.3s ease;
+            }
+
+            .navbar #menu-toggle:checked~.links {
+                left: 0;
+            }
+
+            .navbar #hamburger-btn {
+                display: block;
+            }
+
+            .header .buttons {
+                display: none;
+            }
+
+            .hero-section .hero {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .hero-section img {
+                display: none;
+            }
+        }
+
+
+
+
+
+
+
+        .container .heading1 {
+            text-align: center;
+            font-size: 60px;
+        }
+
+        .sectionStr {
+            display: flex;
+            width: 100%;
+        }
+
+        .section1 {
+            width: 65%;
+            margin-top: 100px;
+        }
+
+        .section1 h1 {
+            margin-left: 140px;
+            font-size: 60px;
+        }
+
+        .section1 h2 {
+            margin-left: 140px;
+            color: rgb(21, 143, 237);
+        }
+
+        .section1 p {
+            margin-left: 140px;
+        }
+
+        .section1 button {
+            margin-left: 140px;
+        }
+
+        .section2 {
+            width: 35%;
+        }
+
+        .client h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .client p {
+            text-align: center;
+        }
+
+        .client img {
+            padding: 65px;
+        }
+
+        .client h1 {
+            margin-left: 360px;
+        }
+
+        .client .h2 {
+            margin-left: 515px;
+        }
+
+        .card {
+            width: 100%;
+            display: flex;
+        }
+
+        .card1 {
+            padding: 40px;
+            margin: 50px;
+            width: 23%;
+            height: 420px;
+            display: inline-block;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.2)
+        }
+
+        .card1 h3 {
+            text-align: center;
+
+        }
+
+        .card1 img {
+            margin-left: 10px;
+
+        }
+
+        .frame {
+            display: flex;
+
+        }
+
+        .f1 {
+            width: 35%;
+        }
+
+        .f2 {
+            width: 60%;
+            margin-top: 80px;
+        }
+
+        .info {
+            display: flex;
+            background-color:rgb(245, 244, 244);
+
+
+        }
+
+        .info1 {
+            width: 45%;
+            text-align: left;
+            margin-left: 90px;
+            margin-top: 50px;
+
+        }
+
+        .info2 {
+            width: 100%;
+            margin-top: 50px;
+            display: flex;
+        }
+       
+        .info2 ul a img{
+            float: left;
+        }
+        
+
+        .login {
+            display: flex;
+            padding: 0 15px;
+            margin: 20px 0 100px 0;
+        }
+
+        .login1 {
+            width: 35%;
+            margin-top: 55px;
+        }
+
+        .login2 {
+            width: 60%;
+            margin-top: 55px;
+        }
+
+        .login3 {
+            width: 65%;
+            margin-top: 55px;
+            margin-left: 60px;
+        }
+
+        .login4 {
+            width: 35%;
+            margin-top: 55px;
+        }
+
+        .login3 img {
+            padding: 25px;
+        }
+
+        #clr {
+            background-color:rgb(245, 244, 244);
+        }
+
+        .pic1 {
+            background-image: url(image\ 18.png);
+            background-repeat: no-repeat;
+            width: 100%;
+            display: flex;
+            min-height: 287px;
+            align-items: flex-end;
+        }
+
+        .pic1 p {
+            background-color: rgb(245, 244, 244);
+            width: 230px;
+            border-radius: 7px;
+            padding: 10px;
+            text-align: center;
+            margin: 0 0 -60px 70px;
+            box-shadow: 0 0 10px 0 #cecece;
+
+        }
+
+        .pic2 {
+            background-image: url(image\ 19.png);
+            background-repeat: no-repeat;
+            width: 100%;
+            display: flex;
+            min-height: 287px;
+            align-items: flex-end;
+        }
+
+        .pic2 p {
+            background-color: rgb(245, 244, 244);
+            width: 230px;
+            border-radius: 7px;
+            padding: 10px;
+            text-align: center;
+            margin: 0 0 -60px 70px;
+            box-shadow: 0 0 10px 0 #cecece;
+        }
+
+        .pic3 {
+            background-image: url(image\ 20.png);
+            background-repeat: no-repeat;
+            width: 100%;
+            display: flex;
+            min-height: 287px;
+            align-items: flex-end;
+        }
+
+        .pic3 p {
+            background-color: rgb(245, 244, 244);
+            width: 230px;
+            border-radius: 7px;
+            padding: 10px;
+            text-align: center;
+            margin: 0 0 -60px 70px;
+            box-shadow: 0 0 10px 0 #cecece;
+        }
+
+
+
+        .lebel {
+            color: #fff;
+            font-size: 35px;
+            margin-top: 50px;
+            margin-left: 150px;
+            margin-bottom: 20px;
+
+        }
+
+        .lebel1 {
+            color: #fff;
+            margin-left: 150px;
+        }
+
+        .lebel2 {
+            margin-left: 150px;
+            margin-top: 10px;
+        }
+
+        .lebel3 {
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+
+        td {
+            color: #fff;
+        }
+
+        .footer {
+            background: rgb(29, 28, 28);
+        }
+
+        .container ul {
+            display: inline-block;
+            padding: 15px;
+            margin: 70px;
+        }
+
+        .container ul li a {
+            color: white;
+            text-decoration: none
+        }
+
+        .footer1 {
+            padding: 50px 0 30px;
+            background: rgb(245, 244, 244);
+        }
+
+        .footer1 h1 {
+            text-align: center;
+        }
+        .footer1 p{
+           text-align: center;
+           margin-bottom: 5px;
+           
+        }
+
+        @media (min-width: 350px) and (max-width: 576px) {
+            .sectionStr {
+                padding: 15px;
+                flex-direction: column;
+            }
+
+            .section1 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .section2 {
+                width: 100%;
+            }
+
+            .section1 h1 {
+                margin: 0;
+                font-size: 30px;
+            }
+
+            .section1 h2 {
+                font-size: 20px;
+                margin: 10px 0 15px 0;
+            }
+
+            .section1 p {
+                margin: 0 0 15px;
+            }
+
+            .navbar .links {
+                align-items: flex-start;
+                gap: 30px;
+            }
+
+            .section1 button {
+                margin: 0;
+            }
+
+            .section2 img {
+                width: 100%;
+            }
+
+            .client-logo {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .client-logo img {
+                padding: 0;
+                margin: 0 15px 15px;
+            }
+
+            .client h1 {
+                padding: 15px;
+                margin-left: 0;
+            }
+
+            .client .h2 {
+                margin-left: 0;
+                padding: 0 15px 15px;
+            }
+            .card{
+               margin-bottom: 15px;
+            }
+
+            .frame {
+                flex-direction: column;
+            }
+
+            .f1 {
+                width: 100%;
+            }
+
+            .f1 img {
+                width: 100%;
+            }
+
+            .f2 {
+                width: 100%;
+                margin-top: 20px;
+                padding: 0 15px 20px;
+            }
+
+            .info {
+                padding: 15px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .info1 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .info2 {
+                margin: 0;
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .login {
+                padding: 15px;
+                flex-direction: column;
+            }
+
+            .login1 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .login1 img {
+                width: 100%;
+            }
+
+            .login2 {
+                margin: 20px 0 0;
+                width: 100%;
+            }
+
+            .login3 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .login4 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .login4 img {
+                width: 100%;
+            }
+
+            .pic1 {
+                width: 100%;
+                display: flex;
+                min-height: 340px;
+                align-items: end;
+                margin: 0 0 30px 0;
+                justify-content: center;
+                background-position: 50% 0;
+               
+            }
+
+            .pic1 p {
+                margin: 0;
+                
+            }
+
+            .pic2 {
+                width: 100%;
+                display: flex;
+                min-height: 340px;
+                align-items: end;
+                margin: 0 0 30px 0;
+                justify-content: center;
+                background-position: 50% 0;
+            }
+
+            .pic2 p {
+                margin: 0;
+            }
+
+            .pic3 {
+                width: 100%;
+                display: flex;
+                min-height: 340px;
+                align-items: end;
+                margin: 0 0 30px 0;
+                justify-content: center;
+                background-position: 50% 0;
+            }
+
+            .pic3 p {
+                margin: 0;
+            }
+
+            .footer1 {
+                padding: 15px;
+            }
+
+            .footer1 button {
+                margin-top: 20px !important;
+            }
+            .container ul {
+            
+            margin: 30px;
+        }
+        }
+
+        /*  Extra Small Media Query  */
+        @media (min-width: 577px) and (max-width: 767px) {
+            .sectionStr {
+                padding: 15px;
+                flex-direction: column;
+            }
+
+            .section1 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .section2 {
+                width: 100%;
+            }
+
+            .section1 h1 {
+                margin: 0;
+                font-size: 50px;
+            }
+
+            .section1 h2 {
+                font-size: 30px;
+                margin: 10px 0 15px 0;
+            }
+
+            .section1 p {
+                margin: 0 0 15px;
+            }
+
+            .navbar .links {
+                align-items: flex-start;
+                gap: 30px;
+            }
+
+            .section1 button {
+                margin: 0;
+            }
+
+            .section2 img {
+                width: 100%;
+            }
+
+            .client-logo {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .client-logo img {
+                padding: 0;
+                margin: 0 15px 15px;
+            }
+
+            .client h1 {
+                padding: 15px;
+                margin-left: 0;
+            }
+
+            .client .h2 {
+                margin-left: 0;
+                padding: 0 15px 15px;
+            }
+
+            .card1 {
+                padding: 15px;
+                margin: 0;
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-bottom: 15px;
+                align-items: center;
+                flex-direction: column;
+                box-shadow: 0 0 5px 0 #cecece;
+            }
+
+            .card1 img {
+                padding: 0 0 15px 0;
+            }
+
+            .Card {
+                padding: 0 15px;
+                
+            }
+            .card{
+               margin-bottom: 15px;
+            }
+
+            .frame {
+                flex-direction: column;
+            }
+
+            .f1 {
+                width: 100%;
+
+            }
+            .f1 img {
+                width: 100%;
+             
+            }
+
+            .f2 {
+                width: 100%;
+                margin-top: 20px;
+                padding: 0 15px 20px;
+            }
+
+            .info {
+                padding: 15px;
+                flex-direction: column;
+            }
+
+            .info1 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .info2 {
+                margin: 0;
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .login {
+                padding: 15px;
+                flex-direction: column;
+            }
+
+            .login1 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .login1 img {
+                width: 100%;
+            }
+
+            .login2 {
+                margin: 20px 0 0;
+                width: 100%;
+            }
+
+            .login3 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .login4 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .login4 img {
+                width: 100%;
+            }
+
+            .pic1 {
+                width: 100%;
+                display: flex;
+                min-height: 340px;
+                align-items: end;
+                margin: 0 0 30px 0;
+                justify-content: center;
+                background-position: 50% 0;
+            }
+
+            .pic1 p {
+                margin: 0;
+            }
+
+            .pic2 {
+                width: 100%;
+                display: flex;
+                min-height: 340px;
+                align-items: end;
+                margin: 0 0 30px 0;
+                justify-content: center;
+                background-position: 50% 0;
+            }
+
+            .pic2 p {
+                margin: 0;
+            }
+
+            .pic3 {
+                width: 100%;
+                display: flex;
+                min-height: 340px;
+                align-items: end;
+                margin: 0 0 30px 0;
+                justify-content: center;
+                background-position: 50% 0;
+            }
+
+            .pic3 p {
+                margin: 0;
+            }
+
+            .footer1 {
+                padding: 15px;
+            }
+
+            .footer1 button {
+                margin-top: 20px !important;
+            }
+            .container ul {
+            
+            margin: 30px;
+        }
+        }
+
+        /* Small Media Query */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .sectionStr {
+                padding: 15px;
+                flex-direction: column;
+            }
+     
+            .section1 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .section2 {
+                width: 100%;
+            }
+
+            .section1 h1 {
+                margin: 0;
+                font-size: 50px;
+            }
+
+            .section1 h2 {
+                font-size: 30px;
+                margin: 10px 0 15px 0;
+            }
+
+            .section1 p {
+                margin: 0 0 15px;
+            }
+
+            .navbar .links {
+                align-items: flex-start;
+                gap: 30px;
+            }
+
+            .section1 button {
+                margin: 0;
+            }
+
+            .section2 img {
+                float: right;
+                flex-wrap: wrap;
+            }
+
+            .client-logo {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .client-logo img {
+                padding: 0;
+                margin: 0 15px 15px;
+            }
+
+            .client h1 {
+                padding: 15px;
+                margin-left: 0;
+            }
+
+            .client .h2 {
+                margin-left: 0;
+                padding: 0 15px 15px;
+            }
+
+            .card1 {
+                padding: 15px;
+                margin: 0;
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-bottom: 15px;
+                align-items: center;
+                flex-direction: column;
+                box-shadow: 0 0 5px 0 #cecece;
+            }
+
+            .card1 img {
+                padding: 0 0 15px 0;
+            }
+
+            .Card {
+                padding: 0 15px;
+            }
+            .card{
+               margin-bottom: 15px;
+            }
+
+            .frame {
+                flex-direction: column;
+            }
+
+            .f1 {
+                width: 100%;
+            }
+
+            .f1 img {
+                width: 60%;
+
+            }
+
+            .f2 {
+                width: 100%;
+                margin-top: 20px;
+                padding: 0 15px 20px;
+            }
+
+            .info {
+                padding: 15px;
+                flex-direction: column;
+            }
+
+            .info1 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .info2 {
+                margin: 0;
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .login {
+                padding: 15px;
+            }
+
+            .login1 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .login1 img {
+                width: 60%;
+            }
+
+            .login2 {
+                margin: 20px 0 0;
+                width: 100%;
+            }
+
+            .login3 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .login4 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .login4 img {
+                width: 60%;
+            }
+
+            .pic1 {
+                width: 100%;
+                display: flex;
+                min-height: 340px;
+                align-items: end;
+                margin: 0 0 30px 0;
+                justify-content: center;
+                background-position: 50% 0;
+                
+            }
+
+            .pic1 p {
+                margin: 0;
+            }
+
+            .pic2 {
+                width: 100%;
+                display: flex;
+                min-height: 340px;
+                align-items: end;
+                margin: 0 0 30px 0;
+                justify-content: center;
+                background-position: 50% 0;
+            }
+
+            .pic2 p {
+                margin: 0;
+            }
+
+            .pic3 {
+                width: 100%;
+                display: flex;
+                min-height: 340px;
+                align-items: end;
+                margin: 0 0 30px 0;
+                justify-content: center;
+                background-position: 50% 0;
+            }
+
+            .pic3 p {
+                margin: 0;
+            }
+
+            .footer1 {
+                padding: 15px;
+            }
+
+            .footer1 button {
+                margin-top: 20px !important;
+            }
+            .container ul {
+            margin: 20px;
+        }
+     
+
+        }
+
+        /* Medium Media Query */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .sectionStr {
+                padding: 15px;
+                flex-direction: column;
+            }
+      
+
+
+            .section1 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .section2 {
+                width: 100%;
+            }
+
+            .section1 h1 {
+                margin: 0;
+                font-size: 50px;
+            }
+
+            .section1 h2 {
+                font-size: 30px;
+                margin: 10px 0 15px 0;
+            }
+
+            .section1 p {
+                margin: 0 0 15px;
+            }
+
+            .navbar .links {
+                align-items: flex-start;
+                gap: 30px;
+            }
+
+            .section1 button {
+                margin: 0;
+            }
+
+            .section2 img {
+                float: right;
+                flex-wrap: wrap;
+            }
+
+            .client-logo {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .client-logo img {
+                padding: 0;
+                margin: 0 15px 15px;
+            }
+
+            .client h1 {
+                padding: 15px;
+                margin-left: 0;
+            }
+
+            .client .h2 {
+                margin-left: 0;
+                padding: 0 15px 15px;
+            }
+
+            .card1 {
+                padding: 15px;
+                margin: 0;
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-bottom: 15px;
+                align-items: center;
+                flex-direction: column;
+                box-shadow: 0 0 5px 0 #cecece;
+            }
+
+            .card1 img {
+                padding: 0 0 15px 0;
+            }
+
+            .Card {
+                padding: 0 15px;
+            }
+
+            .frame {
+                flex-direction: column;
+            }
+
+            .f1 {
+                width: 100%;
+            }
+
+            .f1 img {
+                width: 60%;
+
+            }
+
+            .f2 {
+                width: 100%;
+                margin-top: 20px;
+                padding: 0 15px 20px;
+            }
+
+            .info {
+                padding: 15px;
+                flex-direction: column;
+            }
+
+            .info1 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .info2 {
+                margin: 0;
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .login {
+                padding: 15px;
+            }
+
+            .login1 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .login1 img {
+                width: 60%;
+            }
+
+            .login2 {
+                margin: 20px 0 0;
+                width: 100%;
+            }
+
+            .login3 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .login4 {
+                margin: 0;
+                width: 100%;
+            }
+
+            .login4 img {
+                width: 60%;
+            }
+
+            .pic1 {
+                width: 100%;
+                display: flex;
+                min-height: 340px;
+                align-items: end;
+                margin: 0 0 30px 0;
+                justify-content: center;
+                background-position: 50% 0;
+            }
+
+            .pic1 p {
+                margin: 0;
+            }
+
+            .pic2 {
+                width: 100%;
+                display: flex;
+                min-height: 340px;
+                align-items: end;
+                margin: 0 0 30px 0;
+                justify-content: center;
+                background-position: 50% 0;
+            }
+
+            .pic2 p {
+                margin: 0;
+            }
+
+            .pic3 {
+                width: 100%;
+                display: flex;
+                min-height: 340px;
+                align-items: end;
+                margin: 0 0 30px 0;
+                justify-content: center;
+                background-position: 50% 0;
+            }
+
+            .pic3 p {
+                margin: 0;
+            }
+
+            .footer1 {
+                padding: 15px;
+            }
+
+            .footer1 button {
+                margin-top: 20px !important;
+            }
+        }
+
+        /* Large Media Query */
+        @media (min-width: 1200px) and (max-width: 1399px) {}
+
+        /* Extra Large Media Query */
+    </style>
+</head>
+
+<body>
+
+
+    <div class="top">
+        
+        <nav class="navbar">
+            <h2 class="logo"><a href="#">Sajid <span style="color: #1199f5;">Ali</span></a></h2>
+            <input type="checkbox" id="menu-toggle" />
+            <label for="menu-toggle" id="hamburger-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </label>
+            <ul class="links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Feature</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">FAQ</a></li>
+
+            </ul>
+            <div class="buttons">
+                <a href="#" class="signup">Login</a>
+                <a href="#" class="signup">Sign Up</a>
+            </div>
+        </nav>
+
+
+        <div class="sectionStr">
+            <div class="section1">
+                <h1><b>Lessons and insights</b></h1>
+                <h2><b>from a decade of growth</b></h2>
+                <p style="color: #918f8f;">Where to grow your business as a photographer: site or social media?</p>
+                <button type="button" class="btn btn-primary">Register</button>
+                
+            </div>
+            <div class="section2">
+                <img src="Illustration.png" alt="">
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="client">
+        <div class="container">
+            <h2><b>Our Clients</b></h2>
+            <p style="color: #918f8f;">We have been working with some fortune 500+ clients</p>
+            <div class="client-logo">
+                <img src="Logo1.png" alt="">
+                <img src="Logo2.png" alt="">
+                <img src="Logo3.png" alt="">
+                <img src="Logo4.png" alt="">
+                <img src="Logo5.png" alt="">
+                <img src="Logo6.png" alt="">
+                <img src="Logo7.png" alt="">
+            </div>
+            <h1><b>Manage your entire community</b></h1>
+            <h1 class="h2"><b>in a single system</b></h1>
+            <p style="color: #918f8f;">Who is Nextcent suitable for?</p>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-4">
+                    <div class="card align-center">
+                        <img src="card1.png" alt="">
+                        <h3 style="text-align: center;"><b>Membership <br> Organisations</b></h3>
+                        <p style="color: #918f8f;">Our membership management <br> software provides full automation of <br> membership renewals and
+                            payments
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-4">
+                    <div class="card align-center">
+                        <img src="card1.png" alt="">
+                        <h3 style="text-align: center;"><b>National <br> Associations</b></h3>
+                        <p style="color: #918f8f;">Our membership management <br> software provides full automation of <br> membership renewals and
+                            payments
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-4">
+                    <div class="card align-center">
+                        <img src="card1.png" alt="">
+                        <h3 style="text-align: center;"><b>Clubs And <br> Groups</b></h3>
+                        <p style="color: #918f8f;">Our membership management <br> software provides full automation of <br> membership renewals and
+                            payments
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="container2">
+        <div class="frame">
+            <div class="f1"><img src="Frame 35.png" alt=""></div>
+
+            <div class="f2">
+                <h1><b>The unseen of spendind three years at pixelgrade</b></h1>
+                <p style="color: #918f8f;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur sequi harum architecto enim
+                    quaerat, temporibus asperiores animi, eius saepe inventore necessitatibus quae quia, est recusandae!
+                    Quos ut tenetur optio dolore natus pariatur dicta odio!
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur sequi harum architecto enim
+                    quaerat, temporibus asperiores animi, eius saepe inventore necessitatibus quae quia, est recusandae!
+                    Quos ut tenetur optio dolore natus pariatur dicta odio!
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur sequi harum architecto enim
+                    quaerat, temporibus asperiores animi, eius saepe inventore necessitatibus quae quia, est recusandae!
+                    Quos ut tenetur optio dolore natus pariatur dicta odio!</p>
+                <button type="button" class="btn btn-primary">Learn more</button>
+            </div>
+        </div>
+
+        <div class="info">
+            <!-- <div class="info1">
+                <h1> <b>Helping a local</b></h1>
+                <h2 style="color: rgb(20, 144, 245);"><b>from a decade of growth</b></h2>
+                <p style="color: #918f8f;">We reached here our hard work and dedication</p>
+
+            </div>
+
+            <div class="info2">
+                <ul >
+                    <li><a href=""><img  src="Icon1.png" alt=""></a><b>2,245,341</b></li>
+                    <p style="color: #918f8f;">Members</p>
+                    <a href=""> <img src="Icon2.png" alt=""></a> <b>46,328</b>
+                    <p style="color: #918f8f;">Clubs</p>
+                </ul>
+                <ul  style=>
+                    <a href=""><img src="Icon3.png" alt=""></a><b>2,245,341</b>
+                    <p style="color: #918f8f;">Event Bookings</p>
+                    <a href=""> <img src="Icon4.png" alt=""></a> <b>46,328</b>
+                    <p style="color: #918f8f;">payments</p>
+                </ul>
+            </div> -->
+            <div class="row w-100">
+                <div class="col-lg-6">
+                    <div class="info1 w-100">
+                        <h1> <b>Helping a local</b></h1>
+                        <h2 style="color: rgb(20, 144, 245);"><b>from a decade of growth</b></h2>
+                        <p style="color: #918f8f;">We reached here our hard work and dedication</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-28">
+                    <div class="flex-box my-2">
+                        <div class="flex-box">
+                            <span>
+                                <a href=""><img  src="Icon1.png" alt=""></a>
+                            </span>
+                            <div>
+                                <h2>2,245,341</h2>
+                                <p>Members</p>
+                            </div>
+                        </div>
+                        <div class="flex-box">
+                            <span>
+                                <a href=""><img  src="Icon2.png" alt=""></a>
+                            </span>
+                            <div>
+                                <h2>46,328</h2>
+                                <p>Clubs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-box">
+                        <div class="flex-box">
+                            <span>
+                                <a href=""><img  src="Icon3.png" alt=""></a>
+                            </span>
+                            <div>
+                                <h2>828,867</h2>
+                                <p>Even Bookings</p>
+                            </div>
+                        </div>
+                        <div class="flex-box">
+                            <span>
+                                <a href=""><img  src="Icon4.png" alt=""></a>
+                            </span>
+                            <div>
+                                <h2>1,926,436</h2>
+                                <p>payments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="login">
+            <div class="login1">
+                <img src="login.png" alt="">
+            </div>
+            <div class="login2">
+                <h2><b>How to design your site footer like we did</b></h2>
+                <p style="color: #918f8f;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dignissimos soluta exercitationem?
+                    Hic ducimus eius provident consequuntur quo aliquid similique eaque fuga quam itaque, dolores
+                    tempora enim ratione nesciunt maiores excepturi, fugiat in, voluptatum labore illum reiciendis totam
+                    consectetur. Maiores eaque ex quidem placeat sequi, vero voluptate incidunt, corrupti officiis
+                    accusamus vitae repudiandae nisi ullam rerum amet ad, assumenda minima dolores sapiente. Qui est
+                    culpa id, obcaecati doloremque veniam iste, excepturi maxime quo nobis debitis sapiente nam a quae
+                    eligendi quisquam dignissimos sunt optio? Vero unde ab aliquid accusamus, maiores repellat dicta
+                    enim eos dolorum soluta voluptate qui, harum porro veritatis nesciunt consectetur impedit distinctio
+                    quis repellendus! Corrupti, ea quasi veniam explicabo consequatur maiores iusto tempora, eos
+                    perferendis repudiandae excepturi exercitationem odio officiis temporibus obcaecati numquam sunt
+                    quibusdam saepe. Earum iusto doloremque temporibus atque. Omnis nulla temporibus harum incidunt
+                    excepturi quisquam! Maxime, quas quasi voluptatum quidem est sed perferendis culpa.</p>
+                <button type="button" class="btn btn-primary">Learn more</button>
+            </div>
+        </div>
+
+
+
+        <div class="login" id="clr">
+            <div class="login3">
+                <h5 style="color: #918f8f;">Maecenas dignissim justo eget nulla retrum molestie. maecenas lobortis sem dui, vel rutrum risus
+                    tincidunt ullamcorper. proin eu enim metus.
+                    Vivamus sed libero ornare, tristique quam in, gravida enim. Nullam ut molestiearcu, at hendrerit
+                    elit. Morbi laoreet elit at ligula molestie,
+                    nec molestie mi blandit. Suspendisse cursus tellus sed augue ultrices, quis tristique nulla sodales.
+                    Suspendisse eget Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat id tempore
+                    obcaecati tenetur, commodi excepturi magnam consectetur quidem impedit? Maiores voluptatum commodi
+                    illo, odio officiis saepe, error sapiente minus quis, porro assumenda perspiciatis cumque.
+                </h5>
+                <h3 style="color:rgb(20, 144, 245) ;">Tim Smith</h3>
+                <p style="color: #918f8f;">British Dragon Boat Racing Association</p>
+                <img src="Logo11.png" alt="">
+                <img src="Logo12.png" alt="">
+                <img src="Logo13.png" alt="">
+                <img src="Logo14.png" alt="">
+                <img src="Logo15.png" alt="">
+                <img src="Logo16.png" alt="">
+                <b style="color:rgb(20, 144, 245) ;">Meet all customers <i class="fa-solid fa-arrow-right"></i></b>
+            </div>
+            <div class="login4"><img src="pic.png" alt=""></div>
+
+        </div>
+
+
+        <div>
+            <h2 style="text-align: center; margin-top: 50px;"><b>Caring is the new marketing</b></h2>
+            <p style="text-align: center;color: #918f8f;"  >The Nextcent blog is the best place to read about the latest membership
+                insights,<br>
+                trend and more. See who's joining the community, read about how our community <br>
+                are increase their membership income and lot's more.</p>
+
+                <div class="row login">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="pic1">
+                            <p style="color: #918f8f;">
+                                Creating Streamline Safeguarding processes With oneRun 
+                                <br> <br>
+                                <span style="color: rgb(20, 151, 245);">Readmore <i class="fa-solid fa-arrow-right"></i></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="pic2">
+                            <p style="color: #918f8f;" >What are your safeguarding responsibilities and how can you manage them? <br> <br><span
+                                style="color: rgb(20, 151, 245);">Readmore <i class="fa-solid fa-arrow-right"></i></span></p>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="pic3">
+                            <p style="color: #918f8f;">Revamping the Membership Model with triathlon Australia <br> <br><span
+                                style="color: rgb(20, 151, 245);">Readmore <i class="fa-solid fa-arrow-right"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+
+
+
+        <div class="footer1">
+        
+            <h1><b>Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit.</b></h1>
+        <p><button type="button" style="margin-top: 40px;" class="btn btn-primary">Get a Demo <i class="fa-solid fa-arrow-right"></i></button></p>
+  
+        </div>
+
+
+        <div class="footer">
+            <div class="container" style="display: flex;">
+                <div style="width: 35%;">
+                <ul>
+                    <li style="margin-bottom: 20px;"><a style="font-size: 30px;" href=""><b>Sajid <span style="color: #1199f5;">Ali</span></b></a></li>
+                    <li style="margin-bottom: 10px;" ><a href="">Copyright © 2020 Nexcent ltd.</a></li> 
+                    <li style="margin-bottom: 30px;"><a href="">All rights reserved</a></li>
+
+                    <img src="insta.png" alt="">
+                    <img src="world.png" alt="">
+                    <img src="skype.png" alt="">
+                    <img src="youtube.png" alt="">
+
+
+                </ul>
+            </div>
+            <div style="width: 65%;">
+                <ul>
+                    <li><a href=""><b>Company</b></a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Contact us</a></li>
+                    <li><a href="">Pricing</a></li>
+                    <li><a href="">Testimonials</a></li>
+
+                </ul>
+                <ul>
+                    <li><a href=""><b>Support</b></a></li>
+                    <li><a href="">Help Center</a></li>
+                    <li><a href="">Terms of service</a></li>
+                    <li><a href="">Legal</a></li>
+                    <li><a href="">privacy policy</a></li>
+                    <li><a href="">Status</a></li>
+
+                </ul>
+                <ul>
+                    <li><a href=""><b>Stay up to date</b></a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+    </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
